@@ -10,7 +10,7 @@
 
 <!-- At least 1 click upgrade and 1 automatic upgrade -->
 
-Automatic upgrades are applied at least every 3 seconds, and the screen is updated to reflect this change
+<!-- Automatic upgrades are applied at least every 3 seconds, and the screen is updated to reflect this change -->
 
 <!-- Users cannot purchase an upgrade if they do not have the resources -->
 
@@ -24,19 +24,12 @@ Automatic upgrades are applied at least every 3 seconds, and the screen is updat
 
 Instead of a basic count, use images or icons to represent how many of a purchasable the user has
 Prevent the user from writing a loop to click by setting a 'cooldown' between clicks
-Disable the buttons a user cannot purchase and enable them if they have enough money
+
+<!-- Disable the buttons a user cannot purchase and enable them if they have enough money -->
+
 Unlock/hide upgrades until the user has enough resources at least once to afford the item
 Consider how you could add bonuses that could increase the multiplier of automaticUpgrades
 Try using localstorage to save your game progress between page reloads
 Create a badge system to mark user milestones ex. award 'The Collector' for mining 1,000,000 total Cheese
 Create a way to decrease the interval of automaticCollection
 revent the collectionInterval from being started more than once
-
-//THis probably needs to be inside the axeClick()
-// function sumAxeQt(){
-// var quantity = 0;
-// for (clickAxes.pickaxe.quantity in clickAxes) {
-// quantity += clickAxes.pickaxe[quantity];
-// console.log("You got", quantity)
-// }
-// }sumAxeQt()

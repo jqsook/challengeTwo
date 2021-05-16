@@ -70,7 +70,7 @@ function buyPickAxe() {
         clickAxes.pickaxe.quantity++  
         cheese -= clickAxes.pickaxe.price  //This part works
         clickAxes.pickaxe.price++  //This part works
-        console.log("you have a pick axe", clickAxes.pickaxe.quantity)
+        // console.log("you have a pick axe", clickAxes.pickaxe.quantity)
         update()
         
     } else {
@@ -83,7 +83,7 @@ function axeClick() {
         // console.log("You made it to axe click", cheese)
         update()
         } else {
-            console.log("You made it to axeclick else")
+            // console.log("You made it to axeclick else")
         }
 }
     
@@ -93,7 +93,7 @@ function buyTractor() {
         clickTractors.tractor.quantity++
         cheese -= clickTractors.tractor.price
         clickTractors.tractor.price++
-        console.log("you have a new Tractor")
+        // console.log("you have a new Tractor")
         update()
     } else {
         alert("You need more Doge")
@@ -102,7 +102,7 @@ function buyTractor() {
 function tractrClick() {
         if (clickTractors.tractor.quantity >= 1) {
         cheese += (clickTractors.tractor.quantity * clickTractors.tractor.multiplier);
-        console.log("You made it to trctrlick", cheese)
+        // console.log("You made it to trctrlick", cheese)
         update()
         } else {
         return ("You need more cheese")
@@ -117,7 +117,9 @@ function buyBoat() {
         autoBoats.boat.price
         update()
         // console.log("you have a new Boat")
-    } else {
+    } else if
+        (document.getElementById("btn-boat").disabled = true);
+    else {
         alert("You need more Doge")
     }
         
@@ -126,7 +128,7 @@ function buyBoat() {
 function boatClick() {
     if (autoBoats.boat.quantity >= 1) {
         cheese += (autoBoats.boat.quantity * autoBoats.boat.multiplier)
-        console.log("You made it to Boat click", cheese)
+        // console.log("You made it to Boat click", cheese)
         update()
         } else {
         return ("You need more Doge")
@@ -149,7 +151,7 @@ function buyTrucks() {
 function truckClick() {
         if (autoTrucks.truck.quantity >= 1) {
         cheese += (autoTrucks.truck.quantity * autoTrucks.truck.multiplier)
-        console.log("You made it to trctrlick")
+        // console.log("You made it to trctrlick")
         update()
         } else {
         return ("You need more Doge")
@@ -157,7 +159,7 @@ function truckClick() {
     }
 
 //--------------Rocket------------//
-
+//Setup a display conditional of reveal the icon if doge >= 5,000 and an alert "elon says buy a rocket- icon will be placed in navbar as purchasable. maybe if it works add a tesla roadster for 50,000doge??"
 function buyRockets() {
     if (cheese > autoRockets.rocket.price) {
         autoRockets.rocket.quantity++
@@ -174,7 +176,7 @@ function buyRockets() {
 function rocketClick() {
         if (autoRockets.rocket.quantity >= 1) {
         cheese += (autoRockets.rocket.quantity * autoRockets.rocket.multiplier)
-        console.log("You made it to trctrlick")
+        // console.log("You made it to trctrlick")
             update()
             
         } else {
@@ -190,30 +192,43 @@ function sumMultip() {
     boatClick()
     tractrClick()
     axeClick()
-    rocketClick()
+    autoMater()
     
-    //Automater function
-    autoMate()
+    // rocketClick()
+    // teslaRoadsterClick()
 }
 
     //-----------------INTERVAL FUNCTIONS----------------------
-function autoMate() {
+function autoMater() {
     switch (autoBoats.boat.quantity) {
-        case 1: (autoBoats.boat.quantity >= 1);
-            setInterval(boatClick(), 3000)
+        case 1:
+            setInterval(autoMate, 10000)  
             console.log("You hit case 1");
             break;
-        default:
-            console.log("Hit the default on switch");
+        case 2:
+            setInterval(autoMate, 8000)
+            console.log("You hit case 2");
+            break;
+        case 3:
+            setInterval(autoMate, 5000)
+            console.log("You hit case 3");
+            break;
+        case 4:
+            setInterval(autoMate, 4000)
+            console.log("You hit case 4");
+            break;
+        default: 
+            console.log("No more boats to purchase");
             
     }
 }
-// function autoMate() {
-//     if (autoBoats.boat.quantity >= 1) {
-//             setInterval(boatClick(), 1000)
-//             console.log("You hit automate if");
-//         }
-//     }
+function autoMate() {
+    if (autoBoats.boat.quantity >= 1 && 11 >= autoBoats.boat.quantity) {
+        setInterval(boatClick(), 1) //This doubles up the delay on the purchase- set to min amnt
+        update()
+        console.log("You hit automate if");
+    }
+}
 
 
             
