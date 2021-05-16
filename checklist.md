@@ -6,11 +6,9 @@
 
 <!-- Users have at least 4 upgrades to purchase (axe, tractor, boat, truck)-->
 
-Users can see how many of each resource they have and the amount of modification that resource provides (need to include price of the see below)
+<!-- Users can see how many of each resource they have and the amount of modification that resource provides. -->
 
-price of each item listed in button or icon for purchase <!--I had to add this as it was not listed in the requirements, but from a logical stand point it wouldnt make much sense without it.  So I could TECHNICALLY skip, but why????-->
-
-At least 1 click upgrade and 1 automatic upgrade
+<!-- At least 1 click upgrade and 1 automatic upgrade -->
 
 Automatic upgrades are applied at least every 3 seconds, and the screen is updated to reflect this change
 
@@ -18,9 +16,9 @@ Automatic upgrades are applied at least every 3 seconds, and the screen is updat
 
 <!-- Purchasing an upgrade decreases the resource automatically -->
 
-Upgrades have different modifier values
+<!-- Upgrades have different modifier values -->
 
-When a user buys an upgrade, the price of the upgrade goes up
+<!-- When a user buys an upgrade, the price of the upgrade goes up -->
 
 # Stretch Goals:
 

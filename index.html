@@ -15,40 +15,47 @@
     <title>Help Elon build Mars</title>
   </head>
 
-<body>
+  <body>
     <main>
-    <div class="container-fluid cnt-fld justify-content-space-between">
-        <div class="col-5">
-        <button class="btn-cel img-fluid" onclick="mine()"></button>
-        </div>
-
-        <div class="col-4 p-4 ml-2">
-        <span class="text-white">Total DOGE:<span id="chz-total"></span></span>
-        </div>
-        <div class="flex-column">
-        <div class="col-6 text-white">
+      <div class="container-fluid cnt-fld justify-content-space-between">
+        <div class="d-flex">
+          <div class="col-6 text-white">
             <button class="btn-axe" onclick="buyPickAxe()">
-            Axe <br />
-            <span>Price:$<span id="id-axePrice"></span></span></button
+              Axe<br />(+1 click)<br />
+              <span>Price:$<span id="id-axePrice"></span></span></button
             ><br />
-            <span>Axe:<span id="id-axe"></span></span><br>
-            
+            <span>Axes:<span id="id-axe"></span></span><br />
+
             <button class="btn-axe" onclick="buyTractor()">
-            Tractor<br />
-            <span>Price:$<span id="id-trctPrice"></span></span></button>
+              Tractor<br />(+2 click)<br />
+              <span>Price:$<span id="id-trctPrice"></span></span>
             </button>
-            <span>Tractor:<span id="id-tractr"></span></span>
 
-            <button class="btn-axe" onclick="buyBoat()">Boat<br />
-            <span>Price:$<span id="id-btPrice"></span></span></button>
-            <span>Boat:<span id="id-boat"></span></span>
+            <span>Tractors:<span id="id-tractr"></span></span>
 
-            <button class="btn-axe" onclick="buyTrucks()">Truck<br />
-            <span>Price:$<span id="id-trkPrice"></span></span></button>
+            <button class="btn-axe" onclick="buyBoat()">
+              Boat<br />(+20 click)<br />
+              <span>Price:$<span id="id-btPrice"></span></span>
+            </button>
+            <span>Boats:<span id="id-boat"></span></span>
+
+            <button class="btn-axe" onclick="buyTrucks()">
+              Truck<br />(+50 click)<br />
+              <span>Price:$<span id="id-trkPrice"></span></span>
+            </button>
             <span>Trucks:<span id="id-trk"></span></span>
+          </div>
+
+          <div class="col-4 p-4 ml-2">
+            <span class="text-white"
+              >Total DOGE:<span id="chz-total"></span
+            ></span>
+          </div>
+          <div class="col-12">
+            <button class="btn-cel img-fluid" onclick="mine()"></button>
+          </div>
         </div>
-        </div>
-    </div>
+      </div>
     </main>
     <!-- Put Javascript tags here -->
     <script
@@ -67,5 +74,5 @@
       crossorigin="anonymous"
     ></script>
     <script src="app.js"></script>
-</body>
+  </body>
 </html>

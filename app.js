@@ -36,14 +36,19 @@ let autoTrucks = {
         multiplier: 50
     }
 }
+
+let autoRockets = {
+    rocket: {
+        price: 10500,
+        quantity: 0,
+        multiplier: 500
+    }
+}
 //-------------FUNctions-------------------------------------
 function mine() {
     cheese++
 
-    truckClick()
-    boatClick()
-    tractrClick()
-    axeClick()
+    sumMultip()
     update()
 }
 
@@ -64,9 +69,10 @@ function buyPickAxe() {
     if (cheese >= clickAxes.pickaxe.price) {
         clickAxes.pickaxe.quantity++  
         cheese -= clickAxes.pickaxe.price  //This part works
+        clickAxes.pickaxe.price++  //This part works
         console.log("you have a pick axe", clickAxes.pickaxe.quantity)
-        
         update()
+        
     } else {
         alert("You need more Doge")
     }
@@ -74,10 +80,10 @@ function buyPickAxe() {
 function axeClick() {
         if (clickAxes.pickaxe.quantity >= 1) {
         cheese += (clickAxes.pickaxe.quantity * clickAxes.pickaxe.multiplier);//THIS LEGIT WORKS!!!!!!
-        console.log("You made it to axe click", cheese)
+        // console.log("You made it to axe click", cheese)
         update()
         } else {
-            console.log("You made it to axeclick else", cheese)
+            console.log("You made it to axeclick else")
         }
 }
     
@@ -85,17 +91,18 @@ function axeClick() {
 function buyTractor() {
     if (cheese > clickTractors.tractor.price) {
         clickTractors.tractor.quantity++
-        cheese -= (clickTractors.tractor.price)
-        // console.log("you have a new Tractor")
+        cheese -= clickTractors.tractor.price
+        clickTractors.tractor.price++
+        console.log("you have a new Tractor")
+        update()
     } else {
         alert("You need more Doge")
     }
-        update()
 }
-    function tractrClick() {
-        if (clickTractors.tractor.quantity >= 1 && cheese >= 100) {
+function tractrClick() {
+        if (clickTractors.tractor.quantity >= 1) {
         cheese += (clickTractors.tractor.quantity * clickTractors.tractor.multiplier);
-        console.log("You made it to trctrlick")
+        console.log("You made it to trctrlick", cheese)
         update()
         } else {
         return ("You need more cheese")
@@ -107,17 +114,19 @@ function buyBoat() {
     if (cheese > autoBoats.boat.price) {
         autoBoats.boat.quantity++
         cheese -= (autoBoats.boat.price)
+        autoBoats.boat.price
+        update()
         // console.log("you have a new Boat")
     } else {
         alert("You need more Doge")
     }
-        update()
+        
     }   
 
 function boatClick() {
-    if (autoBoats.boat.quantity >= 1 && cheese >= 500) {
-        cheese += (autoBoats.boat.quantity * autoBoats.boat.multiplier);
-        console.log("You made it to trctrlick")
+    if (autoBoats.boat.quantity >= 1) {
+        cheese += (autoBoats.boat.quantity * autoBoats.boat.multiplier)
+        console.log("You made it to Boat click", cheese)
         update()
         } else {
         return ("You need more Doge")
@@ -129,42 +138,87 @@ function buyTrucks() {
     if (cheese > autoTrucks.truck.price) {
         autoTrucks.truck.quantity++
         cheese -= (autoTrucks.truck.price)
+        update()
         // console.log("you have a Truck")
     } else {
         alert("You need more Doge")
     }
-        update()
+        
 }
 
 function truckClick() {
-        if (autoTrucks.truck.quantity >= 1 && cheese >= 900) {
-        trckMod = trckQty * autoTrucks.truck.multiplier + cheese++;
-        console.log("You made it to trctrlick", trckMod)
+        if (autoTrucks.truck.quantity >= 1) {
+        cheese += (autoTrucks.truck.quantity * autoTrucks.truck.multiplier)
+        console.log("You made it to trctrlick")
         update()
         } else {
         return ("You need more Doge")
         }
     }
 
-//----------------SUM GLOBALS-----------//
+//--------------Rocket------------//
+
+function buyRockets() {
+    if (cheese > autoRockets.rocket.price) {
+        autoRockets.rocket.quantity++
+        cheese -= (autoRockets.rocket.price)
+        update()
     
+        // console.log("you have a Truck")
+    } else {
+        alert("You need more Doge")
+    }
+        
+}
+
+function rocketClick() {
+        if (autoRockets.rocket.quantity >= 1) {
+        cheese += (autoRockets.rocket.quantity * autoRockets.rocket.multiplier)
+        console.log("You made it to trctrlick")
+            update()
+            
+        } else {
+        return ("You need more Doge")
+        }
+    }
 
 
-// function sumMultip() {
-//     let chz = cheese + (pckMod + trctMod + boatMod + trckMod)
-//     console.log("sumMultip", cheese, chz)
+//----------------Function container-----------//
+
+function sumMultip() {
+    truckClick()
+    boatClick()
+    tractrClick()
+    axeClick()
+    rocketClick()
     
-    
-//     axeRepeat()
-//     tractorRepeat()
-//     boatRepeat()
-//     truckRepeat()
-//     update()
-    
-    
-//     }
+    //Automater function
+    autoMate()
+}
 
     //-----------------INTERVAL FUNCTIONS----------------------
-    // function startInterval() {
-    // collectionInterval = setInterval(collectAutoUpgrades, 3000);
-    // }
+function autoMate() {
+    switch (autoBoats.boat.quantity) {
+        case 1: (autoBoats.boat.quantity >= 1);
+            setInterval(boatClick(), 3000)
+            console.log("You hit case 1");
+            break;
+        default:
+            console.log("Hit the default on switch");
+            
+    }
+}
+// function autoMate() {
+//     if (autoBoats.boat.quantity >= 1) {
+//             setInterval(boatClick(), 1000)
+//             console.log("You hit automate if");
+//         }
+//     }
+
+
+            
+        // case (clickAxes.pickaxe.quantity >= 5):
+        // ((cheese _ clickAxes.pickaxe.multiplier) && (clickAxes.pickaxe.price _ 1.10));
+        // console.log("You hit case 2", cheese);
+        // break;
+
