@@ -108,15 +108,14 @@ function tractrClick() {
 
 //  -----------  Boat   ----------------------//
 function buyBoat() {
-    if (cheese > autoBoats.boat.price) {
+    if (cheese > autoBoats.boat.price && autoBoats.boat.quantity <= 4) { //Limited to 4 for the switch cases- I was trying to get the for in loops to work, but no go.
         autoBoats.boat.quantity++
         cheese -= (autoBoats.boat.price)
         autoBoats.boat.price
         update()
         // console.log("you have a new Boat")
-    } else if
+    } else {
         (document.getElementById("btn-boat").disabled = true);
-    else {
         alert("You need more Doge")
     }
         
@@ -199,19 +198,19 @@ function sumMultip() {
 function autoMater() {
     switch (autoBoats.boat.quantity) {
         case 1:
-            setInterval(autoMate, 10000)  
+            setInterval(autoMate, 5000)  
             console.log("You hit case 1");
             break;
         case 2:
-            setInterval(autoMate, 8000)
+            setInterval(autoMate, 4000)
             console.log("You hit case 2");
             break;
         case 3:
-            setInterval(autoMate, 5000)
+            setInterval(autoMate, 3000)
             console.log("You hit case 3");
             break;
         case 4:
-            setInterval(autoMate, 4000)
+            setInterval(autoMate, 2000)
             console.log("You hit case 4");
             break;
         default: 
@@ -228,18 +227,11 @@ function autoMate() {
 }
 
 ///-----------FOR IN LOOPS-------------//
-let text = "",
-for (x in clickAxes) {
-    text += person[x];
-    
-}
+//Pulled these out and put into other vs window- lots of questions for the Ta's--
 
-
-
-// let clickAxes = {
-// pickaxe: {
-// price: 10,
-// quantity: 0,
-// multiplier: 1 
+// let text = "";
+// for (let x in clickAxes.pickaxe) {
+//     text += clickAxes.pickaxe.price[1]; //This returns all the numbers in the pickaxe together.
+//     console.log(1);
 // }
-// };
+// console.log(text)
