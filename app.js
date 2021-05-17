@@ -1,15 +1,12 @@
 let cheese = 0;
 
-// let clickQty = [];
-
-
 //------------4 upgrade dictionaries----------
 
 let clickAxes = {
 pickaxe: {
 price: 10,
 quantity: 0,
-multiplier: 1 //Change this back to 1
+multiplier: 1 
 }
 };
 
@@ -44,7 +41,7 @@ let autoRockets = {
         multiplier: 500
     }
 }
-//-------------FUNctions-------------------------------------
+//-------------FUNctions-------------------------------------//
 function mine() {
     cheese++
 
@@ -53,7 +50,7 @@ function mine() {
 }
 
 function update() {
-document.getElementById("chz-total").innerHTML = `${cheese}`//Put the summed mods here
+document.getElementById("chz-total").innerHTML = `${cheese}`
 document.getElementById("id-axe").innerHTML = `${clickAxes.pickaxe.quantity}`
 document.getElementById("id-axePrice").innerHTML = `${clickAxes.pickaxe.price}`
 document.getElementById("id-tractr").innerHTML = `${clickTractors.tractor.quantity}`
@@ -68,8 +65,8 @@ document.getElementById("id-trkPrice").innerHTML = `${autoTrucks.truck.price}`
 function buyPickAxe() {
     if (cheese >= clickAxes.pickaxe.price) {
         clickAxes.pickaxe.quantity++  
-        cheese -= clickAxes.pickaxe.price  //This part works
-        clickAxes.pickaxe.price++  //This part works
+        cheese -= clickAxes.pickaxe.price  
+        clickAxes.pickaxe.price++  
         // console.log("you have a pick axe", clickAxes.pickaxe.quantity)
         update()
         
@@ -79,7 +76,7 @@ function buyPickAxe() {
 }
 function axeClick() {
         if (clickAxes.pickaxe.quantity >= 1) {
-        cheese += (clickAxes.pickaxe.quantity * clickAxes.pickaxe.multiplier);//THIS LEGIT WORKS!!!!!!
+        cheese += (clickAxes.pickaxe.quantity * clickAxes.pickaxe.multiplier);
         // console.log("You made it to axe click", cheese)
         update()
         } else {
@@ -105,7 +102,7 @@ function tractrClick() {
         // console.log("You made it to trctrlick", cheese)
         update()
         } else {
-        return ("You need more cheese")
+        return ("You need more doge")
         }
     }
 
@@ -230,10 +227,19 @@ function autoMate() {
     }
 }
 
+///-----------FOR IN LOOPS-------------//
+let text = "",
+for (x in clickAxes) {
+    text += person[x];
+    
+}
 
-            
-        // case (clickAxes.pickaxe.quantity >= 5):
-        // ((cheese _ clickAxes.pickaxe.multiplier) && (clickAxes.pickaxe.price _ 1.10));
-        // console.log("You hit case 2", cheese);
-        // break;
 
+
+// let clickAxes = {
+// pickaxe: {
+// price: 10,
+// quantity: 0,
+// multiplier: 1 
+// }
+// };
